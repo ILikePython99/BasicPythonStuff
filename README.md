@@ -16,8 +16,17 @@ import numpy as np
 
 ## Panda
 
+__Masking__
 ```python
-
+# Put your code here
+mask = avocado_full['region'] == "TotalUS"
+us_avocado = avocado_full[mask]
+#small = us_avocado["4046"].sum()
+small_hass = f"{us_avocado['4046'].sum()} Small Hass Avocados were sold\n"
+large_hass = f"{us_avocado['4225'].sum()} Large Hass Avocados were sold\n"
+extra_large_hass = f"{us_avocado['4770'].sum()} Extra Large Hass Avocados were sold\n"
+print(small_hass,large_hass,extra_large_hass)
+print(max(us_avocado['4046'].sum(),us_avocado['4225'].sum(),us_avocado['4770'].sum()))
 ```
 ## ODEINT
 
